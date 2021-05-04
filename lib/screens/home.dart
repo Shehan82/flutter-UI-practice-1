@@ -208,6 +208,42 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     );
                   }),
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 15, left: 15, top: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Operations"),
+                  Container(
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          height: 10,
+                          width: 10,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle, color: Colors.black),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          height: 10,
+                          width: 10,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle, color: Colors.black),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          height: 10,
+                          width: 10,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle, color: Colors.black),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),
