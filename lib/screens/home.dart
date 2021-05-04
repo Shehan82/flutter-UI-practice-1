@@ -441,7 +441,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-            )
+            ),
+            Container(
+              margin: EdgeInsets.all(20),
+              child: Text(
+                "Transaction Histories",
+                style: GoogleFonts.inter(
+                    fontSize: 18, fontWeight: FontWeight.w800),
+              ),
+            ),
+            ListView.builder(
+                shrinkWrap: true,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return Container(
+                    margin: EdgeInsets.only(top: 10),
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(color: Colors.black),
+                  );
+                })
           ],
         ),
       ),
