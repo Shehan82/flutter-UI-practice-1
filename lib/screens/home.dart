@@ -31,6 +31,24 @@ class _HomeScreenState extends State<HomeScreen> {
       "topColor": Colors.teal[300],
     }
   ];
+
+  var trans = [
+    {
+      "name": "Uber Rider",
+      "cardExpired": "2022/02/05",
+      "price": "\$ 322.453",
+    },
+    {
+      "name": "Nike Outlet",
+      "cardExpired": "2026/02/09",
+      "price": "\$ -231.764",
+    },
+    {
+      "name": "Ebay",
+      "cardExpired": "2026/06/09",
+      "price": "\$ 29.43",
+    }
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
