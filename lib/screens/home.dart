@@ -7,6 +7,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int currentState = 0;
   var card = [
     {
       "name": "Shehan Sandeepa",
@@ -210,11 +211,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   }),
             ),
             Container(
-              margin: EdgeInsets.only(right: 15, left: 15, top: 30),
+              margin: EdgeInsets.only(right: 20, left: 20, top: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Operations"),
+                  Text(
+                    "Operations",
+                    style: GoogleFonts.inter(
+                        fontSize: 18, fontWeight: FontWeight.w800),
+                  ),
                   Container(
                     child: Row(
                       children: [
@@ -223,21 +228,33 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: 10,
                           width: 10,
                           decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: Colors.black),
+                              border: Border.all(color: Colors.indigo[700]),
+                              shape: BoxShape.circle,
+                              color: currentState == 1
+                                  ? Colors.indigo[700]
+                                  : Colors.white),
                         ),
                         Container(
                           margin: EdgeInsets.all(5),
                           height: 10,
                           width: 10,
                           decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: Colors.black),
+                              border: Border.all(color: Colors.indigo[700]),
+                              shape: BoxShape.circle,
+                              color: currentState == 2
+                                  ? Colors.indigo[700]
+                                  : Colors.white),
                         ),
                         Container(
                           margin: EdgeInsets.all(5),
                           height: 10,
                           width: 10,
                           decoration: BoxDecoration(
-                              shape: BoxShape.circle, color: Colors.black),
+                              border: Border.all(color: Colors.indigo[700]),
+                              shape: BoxShape.circle,
+                              color: currentState == 3
+                                  ? Colors.indigo[700]
+                                  : Colors.white),
                         )
                       ],
                     ),
@@ -246,50 +263,180 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(right: 15, left: 15, top: 20),
+              // decoration: BoxDecoration(color: Colors.black),
+              padding: EdgeInsets.only(right: 20, left: 20, top: 20),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    width: 110,
-                    height: 110,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 4,
-                            blurRadius: 7,
-                            offset: Offset(0, 3),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        currentState = 1;
+                      });
+                    },
+                    child: Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                          color: currentState == 1
+                              ? Colors.indigo[700]
+                              : Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 3,
+                              blurRadius: 7,
+                              offset: Offset(0, 3),
+                            )
+                          ]),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.transfer_within_a_station,
+                            size: 50,
+                            color: currentState == 1
+                                ? Colors.white
+                                : Colors.indigo[700],
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "Money",
+                            style: GoogleFonts.inter(
+                                color: currentState == 1
+                                    ? Colors.white
+                                    : Colors.black,
+                                fontSize: 13,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          Text(
+                            "Transfer",
+                            style: GoogleFonts.inter(
+                                color: currentState == 1
+                                    ? Colors.white
+                                    : Colors.black,
+                                fontSize: 13,
+                                fontWeight: FontWeight.w700),
                           )
-                        ]),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.transfer_within_a_station,
-                          size: 50,
-                          color: Colors.indigo[700],
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          "Money",
-                          style: GoogleFonts.inter(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700),
-                        ),
-                        Text(
-                          "Transfer",
-                          style: GoogleFonts.inter(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700),
-                        )
-                      ],
+                        ],
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        currentState = 2;
+                      });
+                    },
+                    child: Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                          color: currentState == 2
+                              ? Colors.indigo[700]
+                              : Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 3,
+                              blurRadius: 7,
+                              offset: Offset(0, 3),
+                            )
+                          ]),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.monetization_on,
+                            size: 50,
+                            color: currentState == 2
+                                ? Colors.white
+                                : Colors.indigo[700],
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "Bank",
+                            style: GoogleFonts.inter(
+                                color: currentState == 2
+                                    ? Colors.white
+                                    : Colors.black,
+                                fontSize: 13,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          Text(
+                            "Withdraw",
+                            style: GoogleFonts.inter(
+                                color: currentState == 2
+                                    ? Colors.white
+                                    : Colors.black,
+                                fontSize: 13,
+                                fontWeight: FontWeight.w700),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        currentState = 3;
+                      });
+                    },
+                    child: Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                          color: currentState == 3
+                              ? Colors.indigo[700]
+                              : Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 3,
+                              blurRadius: 7,
+                              offset: Offset(0, 3),
+                            )
+                          ]),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.search,
+                            size: 50,
+                            color: currentState == 3
+                                ? Colors.white
+                                : Colors.indigo[700],
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            "Insight",
+                            style: GoogleFonts.inter(
+                                color: currentState == 3
+                                    ? Colors.white
+                                    : Colors.black,
+                                fontSize: 13,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          Text(
+                            "Tracking",
+                            style: GoogleFonts.inter(
+                                color: currentState == 3
+                                    ? Colors.white
+                                    : Colors.black,
+                                fontSize: 13,
+                                fontWeight: FontWeight.w700),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
