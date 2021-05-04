@@ -76,8 +76,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
+            SizedBox(
+              height: 15,
+            ),
             Container(
-              child: ListView.builder(itemBuilder: itemBuilder),
+              height: 199,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.only(left: 20, right: 20),
+                  itemCount: card.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: EdgeInsets.only(right: 20),
+                      width: 320,
+                      height: 180,
+                      decoration: BoxDecoration(
+                          color: card[index]["cardBackground"],
+                          borderRadius: BorderRadius.circular(10)),
+                    );
+                  }),
             )
           ],
         ),
