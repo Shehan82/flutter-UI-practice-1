@@ -244,6 +244,56 @@ class _HomeScreenState extends State<HomeScreen> {
                   )
                 ],
               ),
+            ),
+            Container(
+              padding: EdgeInsets.only(right: 15, left: 15, top: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    width: 110,
+                    height: 110,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 4,
+                            blurRadius: 7,
+                            offset: Offset(0, 3),
+                          )
+                        ]),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.transfer_within_a_station,
+                          size: 50,
+                          color: Colors.indigo[700],
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Money",
+                          style: GoogleFonts.inter(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        Text(
+                          "Transfer",
+                          style: GoogleFonts.inter(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             )
           ],
         ),
