@@ -36,17 +36,17 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       "name": "Uber Rider",
       "cardExpired": "2022/02/05",
-      "price": "\$ 322.453",
+      "price": "\$322.453",
     },
     {
       "name": "Nike Outlet",
       "cardExpired": "2026/02/09",
-      "price": "\$ -231.764",
+      "price": "-\$231.764",
     },
     {
       "name": "Ebay",
       "cardExpired": "2026/06/09",
-      "price": "\$ 29.43",
+      "price": "\$29.43",
     }
   ];
   @override
@@ -470,11 +470,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             ListView.builder(
                 shrinkWrap: true,
-                itemCount: 5,
+                itemCount: trans.length,
                 itemBuilder: (context, index) {
                   return Container(
                     margin: EdgeInsets.only(top: 10, right: 20, left: 20),
-                    height: 80,
+                    padding: EdgeInsets.only(right: 20, left: 20),
+                    height: 70,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
@@ -486,8 +487,28 @@ class _HomeScreenState extends State<HomeScreen> {
                             offset: Offset(8, 8),
                           )
                         ]),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(trans[index]["cardExpired"],
+                            style: GoogleFonts.inter(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 14,
+                                color: Colors.grey)),
+                        Text(trans[index]["name"],
+                            style: GoogleFonts.inter(
+                                fontWeight: FontWeight.w900,
+                                fontSize: 19,
+                                color: Colors.black)),
+                        Text(trans[index]["price"],
+                            style: GoogleFonts.inter(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 16,
+                                color: Colors.indigo[700]))
+                      ],
+                    ),
                   );
-                })
+                }),
           ],
         ),
       ),
