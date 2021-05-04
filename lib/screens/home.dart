@@ -7,7 +7,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int currentState = 0;
+  int currentState = 1;
   var card = [
     {
       "name": "Shehan Sandeepa",
@@ -443,7 +443,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Container(
-              margin: EdgeInsets.all(20),
+              margin: EdgeInsets.only(top: 30, right: 20, left: 20, bottom: 10),
               child: Text(
                 "Transaction Histories",
                 style: GoogleFonts.inter(
@@ -455,10 +455,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemCount: 5,
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.only(top: 10),
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(color: Colors.black),
+                    margin: EdgeInsets.only(top: 10, right: 20, left: 20),
+                    height: 80,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 10,
+                            offset: Offset(8, 8),
+                          )
+                        ]),
                   );
                 })
           ],
