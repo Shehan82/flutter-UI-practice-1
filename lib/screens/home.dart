@@ -13,12 +13,21 @@ class _HomeScreenState extends State<HomeScreen> {
       "cardNumber": "**** **** ***** **215",
       "cardExpired": "2022/02/05",
       "cardBackground": Colors.indigo[700],
+      "topColor": Colors.pink
     },
     {
       "name": "Shashini anushka",
       "cardNumber": "**** **** ***** **786",
       "cardExpired": "2026/02/09",
       "cardBackground": Colors.teal[300],
+      "topColor": Colors.indigo[700]
+    },
+    {
+      "name": "Kasun rashmika",
+      "cardNumber": "**** **** ***** **345",
+      "cardExpired": "2026/06/09",
+      "cardBackground": Colors.pink,
+      "topColor": Colors.teal[300],
     }
   ];
   @override
@@ -87,12 +96,42 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: card.length,
                   itemBuilder: (context, index) {
                     return Container(
-                      margin: EdgeInsets.only(right: 20),
-                      width: 320,
+                      margin: EdgeInsets.only(right: 10),
+                      width: 340,
                       height: 180,
                       decoration: BoxDecoration(
                           color: card[index]["cardBackground"],
-                          borderRadius: BorderRadius.circular(10)),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                              child: Container(
+                            width: 80,
+                            height: 80,
+                            decoration: BoxDecoration(
+                                color: card[index]["topColor"],
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(20),
+                                  bottomRight: Radius.circular(80),
+                                  // bottomLeft: Radius.circular(100)
+                                )),
+                          )),
+                          Positioned(
+                              bottom: 0,
+                              right: 0,
+                              child: Container(
+                                width: 120,
+                                height: 120,
+                                decoration: BoxDecoration(
+                                    color: card[index]["topColor"],
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(120),
+                                      bottomRight: Radius.circular(20),
+                                      // bottomLeft: Radius.circular(100)
+                                    )),
+                              )),
+                        ],
+                      ),
                     );
                   }),
             )
