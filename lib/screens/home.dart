@@ -137,7 +137,73 @@ class _HomeScreenState extends State<HomeScreen> {
                                 width: 60,
                                 height: 30,
                                 child: Image.asset('assets/images/qq.png'),
-                              ))
+                              )),
+                          Positioned(
+                            top: 40,
+                            left: 30,
+                            child: Text(
+                              "CARD NUMBER",
+                              style: GoogleFonts.inter(
+                                  fontSize: 15,
+                                  color: Colors.grey[500],
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                          Positioned(
+                            top: 60,
+                            left: 30,
+                            child: Text(
+                              card[index]["cardNumber"],
+                              style: GoogleFonts.inter(
+                                  fontSize: 15,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                          Positioned(
+                            top: 130,
+                            left: 30,
+                            child: Text(
+                              "CARD HOLDERNAME",
+                              style: GoogleFonts.inter(
+                                  fontSize: 15,
+                                  color: Colors.grey[500],
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                          Positioned(
+                            top: 150,
+                            left: 30,
+                            child: Text(
+                              card[index]["name"],
+                              style: GoogleFonts.inter(
+                                  fontSize: 15,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                          Positioned(
+                            top: 130,
+                            left: 210,
+                            child: Text(
+                              "EXPIRY DATE",
+                              style: GoogleFonts.inter(
+                                  fontSize: 15,
+                                  color: Colors.grey[500],
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                          Positioned(
+                            top: 150,
+                            left: 210,
+                            child: Text(
+                              card[index]["cardExpired"],
+                              style: GoogleFonts.inter(
+                                  fontSize: 15,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
                         ],
                       ),
                     );
