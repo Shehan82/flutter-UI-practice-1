@@ -130,6 +130,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                       // bottomLeft: Radius.circular(100)
                                     )),
                               )),
+                          Positioned(
+                              top: 20,
+                              left: 240,
+                              child: Container(
+                                width: 60,
+                                height: 30,
+                                child: Image.asset('assets/images/qq.png'),
+                              ))
                         ],
                       ),
                     );
